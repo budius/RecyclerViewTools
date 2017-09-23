@@ -41,6 +41,7 @@ public class WrapAdapter
 
    static final int NOT_A_SECTION = -1;
 
+   private final HeaderFooterFix headerFooterFix = new HeaderFooterFix();
    private final RecyclerView.Adapter wrapped;
    private final AbstractSectionAdapter sections;
    private OnItemClickListenerDetector onItemClickListenerDetector;
@@ -134,15 +135,18 @@ public class WrapAdapter
 
       if (customView != null && viewType == CUSTOM_VIEW_TYPE) {
          viewHolder = new CustomViewHolder(customView);
+         headerFooterFix.process(viewHolder, viewType);
          StaggeredLayoutManagerInternalUtils.setFullWidthLayoutParams(parent, viewHolder);
          return viewHolder;
       }
 
       if (isHeaderViewType(viewType)) {
          viewHolder = new HeaderFooterHolder(findViewByType(removeMask(viewType, HEADER_VIEW_TYPE_MASK), getHeaders(), headerTypes));
+         headerFooterFix.process(viewHolder, viewType);
          StaggeredLayoutManagerInternalUtils.setFullWidthLayoutParams(parent, viewHolder);
       } else if (isFooterViewType(viewType)) {
          viewHolder = new HeaderFooterHolder(findViewByType(removeMask(viewType, FOOTER_VIEW_TYPE_MASK), getFooters(), footerTypes));
+         headerFooterFix.process(viewHolder, viewType);
          StaggeredLayoutManagerInternalUtils.setFullWidthLayoutParams(parent, viewHolder);
       } else if (isSectionViewType(viewType)) {
          viewHolder = sections.onCreateSectionViewHolder(parent, removeMask(viewType, SECTION_VIEW_TYPE_MASK));
