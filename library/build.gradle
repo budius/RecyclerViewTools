@@ -1,28 +1,5 @@
 apply plugin: 'com.android.library'
 
-ext {
-    publishedGroupId = 'com.eyeem.recyclerviewtools'
-    artifact = 'library'
-    libraryVersion = rootProject.ext.libraryVersion
-
-    bintrayRepo = 'maven'
-    bintrayName = 'recyclerview-tools'
-
-    libraryName = 'RecyclerView Tools Library'
-    libraryDescription = 'Collection of tools for RecyclerView. Includes headers, sections, pull to refresh, etc'
-
-    siteUrl = 'https://github.com/eyeem/RecyclerViewTools'
-    gitUrl = 'https://github.com/eyeem/RecyclerViewTools.git'
-
-    developerId = 'ronaldoeyeem'
-    developerName = 'Ronaldo Pace'
-    developerEmail = 'ronaldo@eyeem.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.1'
@@ -30,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 5
-        versionName '0.5.0'
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
     }
     buildTypes {
         release {
@@ -45,3 +22,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/sensorberg-dev/gradle-bintray-push/master/gradle-bintray-push.gradle'
