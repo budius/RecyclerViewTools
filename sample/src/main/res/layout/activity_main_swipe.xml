@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.eyeem.recyclerviewtools.SmarterSwipeRefreshLayout
+<com.budius.recyclerviewtools.SmarterSwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -26,7 +26,7 @@
                 app:expandedTitleTextAppearance="@style/Header.Expanded"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
-                <com.eyeem.recyclerviewtools.sample.Header
+                <com.budius.recyclerviewtools.sample.Header
                     android:id="@+id/header_image"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"/>
@@ -60,4 +60,4 @@
     </android.support.design.widget.CoordinatorLayout>
 
 
-</com.eyeem.recyclerviewtools.SmarterSwipeRefreshLayout>
+</com.budius.recyclerviewtools.SmarterSwipeRefreshLayout>

@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
 
     defaultConfig {
-        minSdkVersion 21 // using 21 here so the sample can use vector drawable without compat
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.libraryVersion
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName '1.0.0'
     }
 
     buildTypes {
@@ -23,15 +23,16 @@ android {
 }
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
 
-    compile group: 'com.android.support', name: 'recyclerview-v7', version: rootProject.ext.supportLibVersion
-    compile group: 'com.android.support', name: 'design', version: rootProject.ext.supportLibVersion
-    compile group: 'com.android.support', name: 'appcompat-v7', version: rootProject.ext.supportLibVersion
-    compile group: 'com.android.support', name: 'cardview-v7', version: rootProject.ext.supportLibVersion
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
 
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'de.hdodenhof:circleimageview:2.0.0'
-    compile 'com.actinarium.aligned:aligned:0.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'de.hdodenhof:circleimageview:2.0.0'
+    implementation 'com.actinarium.aligned:aligned:0.1'
 }
