@@ -17,7 +17,7 @@ import android.widget.Switch;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -25,15 +25,15 @@ import butterknife.ButterKnife;
  */
 public class ChooserActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener, CompoundButton.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
 
-   @Bind(R.id.toolbar) Toolbar toolbar;
-   @Bind(R.id.useCoordinatorLayout) Switch useCoordinatorLayout;
-   @Bind(R.id.useSections) Switch useSections;
-   @Bind(R.id.useHeader) Switch useHeader;
-   @Bind(R.id.useLoadMore) Switch useLoadMore;
-   @Bind(R.id.useOnItemClick) Switch useOnItemClick;
-   @Bind(R.id.useItemOffsetDecoration) Switch useItemOffsetDecoration;
-   @Bind(R.id.layoutManager) Spinner layoutManager;
-   @Bind(R.id.layoutManagerSpan) Spinner layoutManagerSpan;
+   @BindView(R.id.toolbar) Toolbar toolbar;
+   @BindView(R.id.useCoordinatorLayout) Switch useCoordinatorLayout;
+   @BindView(R.id.useSections) Switch useSections;
+   @BindView(R.id.useHeader) Switch useHeader;
+   @BindView(R.id.useLoadMore) Switch useLoadMore;
+   @BindView(R.id.useOnItemClick) Switch useOnItemClick;
+   @BindView(R.id.useItemOffsetDecoration) Switch useItemOffsetDecoration;
+   @BindView(R.id.layoutManager) Spinner layoutManager;
+   @BindView(R.id.layoutManagerSpan) Spinner layoutManagerSpan;
 
    private Config config;
 
